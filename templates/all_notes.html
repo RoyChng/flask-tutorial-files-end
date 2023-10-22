@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>All Notes</h1>
+        <a class="create-note" href="/create-note">Create</a>
+      </header>
+      <div class="note__grid">
+        {% for note in notes %}
+        <a class="note__link" href="/note/{{ note.id }}">
+          <div class="note">
+            <div class="note__content">
+              <p>{{ note.content }}</p>
+            </div>
+            <div class="note__title">{{ note.title }}</div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+</html>

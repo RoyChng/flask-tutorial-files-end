@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Note</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="back" href="/"> < Back </a>
+        <h1>Create Note</h1>
+      </header>
+      <form class="note__form" action="/create-note" method="POST">
+        <label for="title"> Title </label>
+        <input type="text" name="title" id="title" required />
+        <label for="content"> Content </label>
+        <textarea
+          type="text"
+          name="content"
+          id="content"
+          rows="10"
+          required
+        ></textarea>
+        <button class="note__form-btn--primary">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
