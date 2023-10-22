@@ -14,7 +14,7 @@
       </header>
       <div class="note__grid">
         {% for note in notes %}
-        <a class="note__link" href="/note/{{ note.id }}">
+        <a class="note__link" href="{{ url_for('note_details', id=note.id) }}">
           <div class="note">
             <div class="note__content">
               <p>{{ note.content }}</p>
